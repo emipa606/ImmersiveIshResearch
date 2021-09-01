@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Excluded>
+    <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.gitignore</exclude>
+    <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.git</exclude>
+    <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\Source</exclude>
+  </Excluded>
+</Configuration>
