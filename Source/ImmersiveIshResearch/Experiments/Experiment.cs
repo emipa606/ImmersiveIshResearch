@@ -72,7 +72,7 @@ namespace ImmersiveResearch
                     SoundDefOf.Tick_High.PlayOneShotOnCamera();
                 }
 
-                TooltipHandler.TipRegion(rect2, "ReorderBillUpTip".Translate());
+                TooltipHandler.TipRegion(rect2, "IR.ReorderBillUpTip".Translate());
             }
 
             if (expStack.IndexOf(this) < expStack.ListCount - 1)
@@ -84,7 +84,7 @@ namespace ImmersiveResearch
                     SoundDefOf.Tick_Low.PlayOneShotOnCamera();
                 }
 
-                TooltipHandler.TipRegion(rect3, "ReorderBillDownTip".Translate());
+                TooltipHandler.TipRegion(rect3, "IR.ReorderBillDownTip".Translate());
             }
 
             var rect4 = new Rect(28f, 0f, rect.width - 48f - 20f, 24f);
@@ -104,7 +104,7 @@ namespace ImmersiveResearch
                 SoundDefOf.Click.PlayOneShotOnCamera();
             }
 
-            TooltipHandler.TipRegion(rect5, "DeleteBillTip".Translate());
+            TooltipHandler.TipRegion(rect5, "IR.DeleteBillTip".Translate());
 
             var rect6 = new Rect(300f, 26f, 70f, 24f);
             //rect6.x -= rect6.width + 4f;
@@ -116,7 +116,7 @@ namespace ImmersiveResearch
                 expStack.SetSuspended(this, suspended);
             }
 
-            TooltipHandler.TipRegion(rect6, "SuspendBillTip".Translate());
+            TooltipHandler.TipRegion(rect6, "IR.SuspendBillTip".Translate());
 
 
             /* if (!StatusString.NullOrEmpty())
@@ -133,7 +133,7 @@ namespace ImmersiveResearch
                 Text.Anchor = TextAnchor.MiddleCenter;
                 var rect9 = new Rect(rect.x + (rect.width / 2f) - 70f, rect.y + (rect.height / 2f) - 20f, 140f, 40f);
                 GUI.DrawTexture(rect9, TexUI.GrayTextBG);
-                Widgets.Label(rect9, "SuspendedCaps".Translate());
+                Widgets.Label(rect9, "IR.SuspendedCaps".Translate());
                 Text.Anchor = TextAnchor.UpperLeft;
                 Text.Font = GameFont.Small;
             }

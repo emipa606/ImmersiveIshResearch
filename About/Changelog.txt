@@ -1,4 +1,7 @@
 # Changelog for ImmersiveIshResearch
 
+1.0.2.0 - More uniqueish translation strings
+
+
 1.0.1.0 - Updated to 1.3
 
