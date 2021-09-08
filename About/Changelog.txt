@@ -1,5 +1,8 @@
 # Changelog for ImmersiveIshResearch
 
+1.0.3.0 - Should now patch simple research bench nicer
+
+
 1.0.2.0 - More uniqueish translation strings
 
 

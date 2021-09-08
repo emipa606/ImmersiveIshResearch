@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="SimpleResearchBench"]</xpath>
-    <value>
-      <comps>
-      </comps>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="SimpleResearchBench"]/comps</xpath>
+    <success>Always</success>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="SimpleResearchBench"]</xpath>
+      <value>
+        <comps>
+        </comps>
+      </value>
+    </nomatch>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/ThingDef[defName="SimpleResearchBench"]/comps</xpath>
