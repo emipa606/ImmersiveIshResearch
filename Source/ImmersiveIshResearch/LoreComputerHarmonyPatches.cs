@@ -18,7 +18,7 @@ namespace ImmersiveResearch
     ///     Class that uses Harmony to inject custom code into RimWorld code.
     /// </summary>
     [StaticConstructorOnStartup]
-    internal static class LoreComputerHarmonyPatches
+    public static class LoreComputerHarmonyPatches
     {
         private static readonly float _neolithicProbability = 40.0f;
         private static readonly float _medievalProbability = 20.0f;

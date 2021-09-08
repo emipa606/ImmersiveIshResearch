@@ -1,5 +1,8 @@
 # Changelog for ImmersiveIshResearch
 
+1.0.4.0 - Added support for ResearchPal
+
+
 1.0.3.0 - Should now patch simple research bench nicer
 
 

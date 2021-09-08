@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\1.3\Assemblies</OutputPath>
+    <OutputPath>..\..\ResearchPal\1.3\Assemblies</OutputPath>
     <TargetFramework>net472</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -19,6 +19,16 @@
 		  <ExcludeAssets>runtime</ExcludeAssets>
 	  </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImmersiveIshResearch\ImmersiveIshResearch.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ResearchTree">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2351393394\1.3\Assemblies\ResearchTree.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 </Project>
-
-

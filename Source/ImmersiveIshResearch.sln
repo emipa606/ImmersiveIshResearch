@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveIshResearch", "ImmersiveIshResearch\ImmersiveIshResearch.csproj", "{2FEA0EEA-CD83-4D4B-9B5D-67E044D7B099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImmersiveIshResearch", "ImmersiveIshResearch\ImmersiveIshResearch.csproj", "{2FEA0EEA-CD83-4D4B-9B5D-67E044D7B099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResearchPalPatch", "ResearchPalPatch\ResearchPalPatch.csproj", "{69606FCA-B5BA-4AA5-8995-D0D179A9649B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2FEA0EEA-CD83-4D4B-9B5D-67E044D7B099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FEA0EEA-CD83-4D4B-9B5D-67E044D7B099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FEA0EEA-CD83-4D4B-9B5D-67E044D7B099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69606FCA-B5BA-4AA5-8995-D0D179A9649B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69606FCA-B5BA-4AA5-8995-D0D179A9649B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69606FCA-B5BA-4AA5-8995-D0D179A9649B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69606FCA-B5BA-4AA5-8995-D0D179A9649B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
