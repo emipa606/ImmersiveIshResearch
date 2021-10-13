@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Immersive-ish Research (Continued)</name>
   <packageId>Mlie.ImmersiveIshResearch</packageId>
@@ -26,6 +26,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 
 - Made Royalty/Ideology as conditional patches
 - The research-tree might need to be opened and cloed once for the hiding of tech to work
+- Now supports [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2351393394]ResearchPal - Forked[/url]
 
 [img]https://i.imgur.com/pufA0kM.png[/img]
 

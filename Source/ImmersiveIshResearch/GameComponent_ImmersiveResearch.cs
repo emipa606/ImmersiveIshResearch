@@ -8,8 +8,8 @@ namespace ImmersiveResearch
 {
     public class GameComponent_ImmersiveResearch : GameComponent
     {
-        private List<string> _colonyExperimentAuthorsForSaving = new List<string>();
-        private List<string> _colonyExperimentDefNamesForSaving = new List<string>();
+        private HashSet<string> _colonyExperimentAuthorsForSaving = new HashSet<string>();
+        private HashSet<string> _colonyExperimentDefNamesForSaving = new HashSet<string>();
 
 
         public GameComponent_ImmersiveResearch(Game game)
@@ -224,7 +224,7 @@ namespace ImmersiveResearch
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
-                _colonyExperimentAuthorsForSaving = ColonyResearcherExperimentDict.Keys.ToList();
+                _colonyExperimentAuthorsForSaving = ColonyResearcherExperimentDict.Keys.ToHashSet();
 
                 foreach (var t in ColonyResearcherExperimentDict)
                 {
