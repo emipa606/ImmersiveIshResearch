@@ -2,16 +2,15 @@
 using HarmonyLib;
 using Verse;
 
-namespace ImmersiveIshResearch
+namespace ImmersiveIshResearch;
+
+[StaticConstructorOnStartup]
+public class ResearchPalPatch
 {
-    [StaticConstructorOnStartup]
-    public class ResearchPalPatch
+    static ResearchPalPatch()
     {
-        static ResearchPalPatch()
-        {
-            var harmony = new Harmony("Mlie.ImmersiveIshResearch");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Log.Message("[ImmersiveishResearch]: Patched for ResearchPal");
-        }
+        var harmony = new Harmony("Mlie.ImmersiveIshResearch.ResearchPal");
+        harmony.PatchAll(Assembly.GetExecutingAssembly());
+        Log.Message("[ImmersiveishResearch]: Patched for ResearchPal");
     }
 }
