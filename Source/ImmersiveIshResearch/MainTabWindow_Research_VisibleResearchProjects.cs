@@ -16,6 +16,7 @@ public static class MainTabWindow_Research_VisibleResearchProjects
             if (LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[project]?.IsDiscovered != true)
             {
                 __result.RemoveAt(index);
+                index--;
             }
         }
     }
