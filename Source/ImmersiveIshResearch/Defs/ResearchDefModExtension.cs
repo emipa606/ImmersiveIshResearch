@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+public class ResearchDefModExtension : DefModExtension
 {
-    public class ResearchDefModExtension : DefModExtension
-    {
-        public bool ExperimentHasBeenMade;
+    public bool ExperimentHasBeenMade;
 
-        public string ResearchDefAttachedToExperiment;
+    public string ResearchDefAttachedToExperiment;
 
-        public ResearchSizes ResearchSize;
-        public List<ResearchTypes> researchTypes = new List<ResearchTypes>();
-    }
+    public ResearchSizes ResearchSize;
+    public List<ResearchTypes> researchTypes = new List<ResearchTypes>();
 }

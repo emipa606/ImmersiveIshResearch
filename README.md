@@ -6,7 +6,7 @@ Update of hubba368s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 
 - Made Royalty/Ideology as conditional patches
-- The research-tree might need to be opened and cloed once for the hiding of tech to work
+- Removed some pretty destructive code in favour of a more sensible Postfix style. Should be more compatible with for example the https://steamcommunity.com/sharedfiles/filedetails/?id=735268789]Tech Advancing mod
 - Now supports https://steamcommunity.com/sharedfiles/filedetails/?id=2351393394]ResearchPal - Forked
 
 ![Image](https://i.imgur.com/pufA0kM.png)
@@ -113,6 +113,7 @@ This mod makes quite a few changes to the vanilla research portion of the game, 
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

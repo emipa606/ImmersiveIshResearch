@@ -1,12 +1,11 @@
-﻿namespace ImmersiveResearch
+﻿namespace ImmersiveResearch;
+
+public enum ResearchSizes
 {
-    public enum ResearchSizes
-    {
-        Small,
-        Medium,
-        Large,
-        Essential,
-        Unknown,
-        None
-    }
+    Small,
+    Medium,
+    Large,
+    Essential,
+    Unknown,
+    None
 }

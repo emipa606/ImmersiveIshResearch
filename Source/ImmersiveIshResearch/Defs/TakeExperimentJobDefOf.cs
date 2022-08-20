@@ -1,11 +1,10 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+[DefOf]
+public static class TakeExperimentJobDefOf
 {
-    [DefOf]
-    public static class TakeExperimentJobDefOf
-    {
-        public static JobDef CabinetTakeExperiment;
-    }
+    public static JobDef CabinetTakeExperiment;
 }

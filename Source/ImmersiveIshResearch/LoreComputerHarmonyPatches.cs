@@ -722,12 +722,7 @@ public static class LoreComputerHarmonyPatches
 
                 bool CheckIfAnyExperimentsStored()
                 {
-                    if (cabinet is { ListCount: 0 })
-                    {
-                        return false;
-                    }
-
-                    return true;
+                    return cabinet is not { ListCount: 0 };
                 }
 
                 void AddExperimentAction()
@@ -825,12 +820,7 @@ public static class LoreComputerHarmonyPatches
                         }
                     }
 
-                    if (counter == maxNumOfResearches)
-                    {
-                        return true;
-                    }
-
-                    return false;
+                    return counter == maxNumOfResearches;
                 }
 
                 // create our button press local functions

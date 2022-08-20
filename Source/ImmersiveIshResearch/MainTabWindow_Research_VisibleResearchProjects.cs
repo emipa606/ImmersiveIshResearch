@@ -13,11 +13,13 @@ public static class MainTabWindow_Research_VisibleResearchProjects
         for (var index = 0; index < __result.Count; ++index)
         {
             var project = __result[index].defName;
-            if (LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[project]?.IsDiscovered != true)
+            if (LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[project]?.IsDiscovered == true)
             {
-                __result.RemoveAt(index);
-                index--;
+                continue;
             }
+
+            __result.RemoveAt(index);
+            index--;
         }
     }
 }

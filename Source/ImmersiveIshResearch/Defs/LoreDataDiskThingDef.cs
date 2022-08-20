@@ -1,8 +1,7 @@
 ﻿using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+public class LoreDataDiskThingDef : ThingDef
 {
-    public class LoreDataDiskThingDef : ThingDef
-    {
-    }
 }

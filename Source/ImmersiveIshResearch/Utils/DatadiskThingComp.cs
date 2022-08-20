@@ -1,10 +1,9 @@
 ﻿using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+internal class DatadiskThingComp : ThingComp
 {
-    internal class DatadiskThingComp : ThingComp
-    {
-        public string datadiskDescription;
-        public DatadiskCompProperties Properties => Properties;
-    }
+    public string datadiskDescription;
+    public DatadiskCompProperties Properties => Properties;
 }

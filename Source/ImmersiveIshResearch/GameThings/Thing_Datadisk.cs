@@ -1,41 +1,40 @@
 ﻿using System.Text;
 using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+internal class Thing_Datadisk : ThingWithComps
 {
-    internal class Thing_Datadisk : ThingWithComps
+    private string _uniqueDescription;
+
+    public string UniqueDescription => _uniqueDescription;
+
+    public override void PostMake()
     {
-        private string _uniqueDescription;
+        base.PostMake();
+        GetComp<DatadiskThingComp>().datadiskDescription =
+            LoreComputerHarmonyPatches.GenerateRandomDatadiskDescription(this);
+        _uniqueDescription = GetComp<DatadiskThingComp>().datadiskDescription;
+    }
 
-        public string UniqueDescription => _uniqueDescription;
-
-        public override void PostMake()
+    public override string GetInspectString()
+    {
+        if (this.TryGetComp<DatadiskThingComp>() == null)
         {
-            base.PostMake();
-            GetComp<DatadiskThingComp>().datadiskDescription =
-                LoreComputerHarmonyPatches.GenerateRandomDatadiskDescription(this);
-            _uniqueDescription = GetComp<DatadiskThingComp>().datadiskDescription;
+            Log.Error("datadisk thing comp is null.");
+            return "";
         }
 
-        public override string GetInspectString()
-        {
-            if (this.TryGetComp<DatadiskThingComp>() == null)
-            {
-                Log.Error("datadisk thing comp is null.");
-                return "";
-            }
+        var sBuilder = new StringBuilder();
 
-            var sBuilder = new StringBuilder();
+        sBuilder.Append("Datadisk Contents: " + "\n");
+        sBuilder.Append(_uniqueDescription);
+        return sBuilder.ToString();
+    }
 
-            sBuilder.Append("Datadisk Contents: " + "\n");
-            sBuilder.Append(_uniqueDescription);
-            return sBuilder.ToString();
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref _uniqueDescription, "datadiskDescription");
-        }
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Values.Look(ref _uniqueDescription, "datadiskDescription");
     }
 }

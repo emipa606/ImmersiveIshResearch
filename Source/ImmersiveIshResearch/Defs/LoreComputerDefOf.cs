@@ -1,11 +1,10 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+[DefOf]
+public static class LoreComputerDefOf
 {
-    [DefOf]
-    public static class LoreComputerDefOf
-    {
-        public static JobDef LoreComputerDef;
-    }
+    public static JobDef LoreComputerDef;
 }

@@ -1,71 +1,70 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ImmersiveResearch
+namespace ImmersiveResearch;
+
+internal class Building_LoreComputer : Building_WorkTable
 {
-    internal class Building_LoreComputer : Building_WorkTable
+    private CompGlower _glowerComp;
+
+    public CompPowerTrader PowerComponent { get; private set; }
+
+
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
-        private CompGlower _glowerComp;
+        base.SpawnSetup(map, respawningAfterLoad);
 
-        public CompPowerTrader PowerComponent { get; private set; }
+        PowerComponent = GetComp<CompPowerTrader>();
+        _glowerComp = GetComp<CompGlower>();
+    }
 
-
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+    // deprecated
+    public Thing GetLocationOfOwnedThing(string defOfThing)
+    {
+        var thingList = Map.listerThings.ThingsInGroup(ThingRequestGroup.HaulableEver);
+        foreach (var currentThing in thingList)
         {
-            base.SpawnSetup(map, respawningAfterLoad);
-
-            PowerComponent = GetComp<CompPowerTrader>();
-            _glowerComp = GetComp<CompGlower>();
-        }
-
-        // deprecated
-        public Thing GetLocationOfOwnedThing(string defOfThing)
-        {
-            var thingList = Map.listerThings.ThingsInGroup(ThingRequestGroup.HaulableEver);
-            foreach (var currentThing in thingList)
+            if (currentThing.def.defName != defOfThing)
             {
-                if (currentThing.def.defName != defOfThing)
-                {
-                    continue;
-                }
-
-                if (currentThing.IsForbidden(Find.FactionManager.OfPlayer))
-                {
-                    continue;
-                }
-
-                return currentThing;
+                continue;
             }
 
-            return null;
-        }
-
-
-        public bool CheckIfLinkedToResearchBench()
-        {
-            // just loop through all potential linkable objects and check that they are connected (by checking the linked objects list of linked objects).
-            var props = def.GetCompProperties<CompProperties_Facility>();
-            if (props.linkableBuildings == null)
+            if (currentThing.IsForbidden(Find.FactionManager.OfPlayer))
             {
-                return false;
+                continue;
             }
 
-            foreach (var thingDef in props.linkableBuildings)
+            return currentThing;
+        }
+
+        return null;
+    }
+
+
+    public bool CheckIfLinkedToResearchBench()
+    {
+        // just loop through all potential linkable objects and check that they are connected (by checking the linked objects list of linked objects).
+        var props = def.GetCompProperties<CompProperties_Facility>();
+        if (props.linkableBuildings == null)
+        {
+            return false;
+        }
+
+        foreach (var thingDef in props.linkableBuildings)
+        {
+            foreach (var item in Map.listerThings.ThingsOfDef(thingDef))
             {
-                foreach (var item in Map.listerThings.ThingsOfDef(thingDef))
+                var affectedComp = item.TryGetComp<CompAffectedByFacilities>();
+                foreach (var thing in affectedComp.LinkedFacilitiesListForReading)
                 {
-                    var affectedComp = item.TryGetComp<CompAffectedByFacilities>();
-                    foreach (var thing in affectedComp.LinkedFacilitiesListForReading)
+                    if (thing == this)
                     {
-                        if (thing == this)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }
-
-            return false;
         }
+
+        return false;
     }
 }

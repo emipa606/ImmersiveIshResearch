@@ -1,23 +1,22 @@
-﻿namespace ImmersiveResearch
+﻿namespace ImmersiveResearch;
+
+public enum ResearchTypes
 {
-    public enum ResearchTypes
-    {
-        None,
-        Biological,
-        Mechanical,
-        Textiles,
-        Cultural,
-        Construction,
-        Metallurgy,
-        Carpentry,
-        Weaponry,
-        Masonry,
-        Electrical,
-        Medical,
-        Spacecraft,
-        Advanced,
-        Spacer,
-        Ultra,
-        Mod
-    }
+    None,
+    Biological,
+    Mechanical,
+    Textiles,
+    Cultural,
+    Construction,
+    Metallurgy,
+    Carpentry,
+    Weaponry,
+    Masonry,
+    Electrical,
+    Medical,
+    Spacecraft,
+    Advanced,
+    Spacer,
+    Ultra,
+    Mod
 }
