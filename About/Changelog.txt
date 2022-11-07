@@ -1,5 +1,8 @@
 # Changelog for ImmersiveIshResearch
 
+1.4.1 - Mod updated for 1.4 and passed autotests
+
+
 1.3.2 - Fixed a bug with the research-list, thanks Evyatar108!
 
 

@@ -216,7 +216,7 @@ public static class LoreComputerHarmonyPatches
         if (!(from t in DefDatabase<ThingDef>.AllDefs where t.defName == defName select t).TryRandomElement(
                 out var finalDef))
         {
-            Log.Error("Unable to locate " + defName + " in DefDatabase.");
+            Log.Error($"Unable to locate {defName} in DefDatabase.");
         }
         else
         {
@@ -469,13 +469,13 @@ public static class LoreComputerHarmonyPatches
         switch (datadisk.def.defName)
         {
             case "UselessDatadisk":
-                descList = XDocument.Load(relativePath + "\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
+                descList = XDocument.Load($"{relativePath}\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
                 results = descList.Descendants("item").Select(x => (string)x);
                 description = results.ElementAt(Rand.Range(0, results.Count()));
                 break;
 
             case "ValuableDatadisk":
-                descList = XDocument.Load(relativePath + "\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
+                descList = XDocument.Load($"{relativePath}\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
                 results = descList.Descendants("item").Select(x => (string)x);
                 description = results.ElementAt(Rand.Range(0, results.Count()));
                 break;
@@ -612,7 +612,7 @@ public static class LoreComputerHarmonyPatches
     {
         //Log.Error("New research name: " + researchName, false);
         Find.LetterStack.ReceiveLetter("New Research Discovered",
-            "A new research project has been discovered. We have discovered " + researchName + ".",
+            $"A new research project has been discovered. We have discovered {researchName}.",
             LetterDefOf.PositiveEvent);
         UndiscoveredResearchList.MainResearchDict[researchName].IsDiscovered = true;
         return researchName;
@@ -779,7 +779,7 @@ public static class LoreComputerHarmonyPatches
                 foreach (var exp in cabinet.CabinetThings)
                 {
                     var temp = exp.Value as Thing_FinishedExperiment;
-                    var label2 = "Take " + temp.TryGetComp<ResearchThingComp>().researchDefName + " Experiment";
+                    var label2 = $"Take {temp.TryGetComp<ResearchThingComp>().researchDefName} Experiment";
                     var action2 = (Action)TakeExperimentAction;
                     var priority2 = MenuOptionPriority.InitiateSocial;
                     var thing2 = destination.Thing;

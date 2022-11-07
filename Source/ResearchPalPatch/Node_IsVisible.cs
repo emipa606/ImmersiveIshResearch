@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using ImmersiveResearch;
-using ResearchPal;
+using ResearchPowl;
 
 namespace ImmersiveIshResearch;
 

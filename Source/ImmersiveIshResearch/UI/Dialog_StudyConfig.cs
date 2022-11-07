@@ -143,14 +143,14 @@ public class Dialog_StudyConfig : Window
 
 
         // need to get defName of recipe from this point
-        var _selectedOption = selectedPawn?.Name + " will study: " + selectedExperimentName;
+        var _selectedOption = $"{selectedPawn?.Name} will study: {selectedExperimentName}";
 
 
         var warningText = "";
         if (selectedPawn != null)
         {
-            warningText = selectedPawn.Name + " is a colony researcher with a skill of: " +
-                          selectedPawn.skills.GetSkill(SkillDefOf.Intellectual).levelInt;
+            warningText =
+                $"{selectedPawn.Name} is a colony researcher with a skill of: {selectedPawn.skills.GetSkill(SkillDefOf.Intellectual).levelInt}";
         }
 
         // text explaining selected pawn and topic

@@ -4,8 +4,6 @@ namespace ImmersiveResearch;
 
 internal class Hediff_ResearchComp : HediffWithComps
 {
-    // public ResearchHediffCompProperties Props => (ResearchHediffCompProperties)props;
-
     public override void Notify_PawnDied()
     {
         var temp = Current.Game.GetComponent<GameComponent_ImmersiveResearch>();

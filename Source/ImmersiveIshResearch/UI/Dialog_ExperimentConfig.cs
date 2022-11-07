@@ -32,12 +32,6 @@ public class Dialog_ExperimentConfig : Window
         InitExperiments();
     }
 
-    /*private List<string> _experimentNames = new List<string>();
-    private List<string> _experimentTypes = new List<string>();
-
-    private List<Texture2D> _experimentTypeIcons = new List<Texture2D>();
-    private List<Texture2D> _experimentIcons = new List<Texture2D>();*/
-
     public override Vector2 InitialSize => new Vector2(760f, 760f);
 
     private Experiment MakeNewExperiment()
@@ -189,8 +183,7 @@ public class Dialog_ExperimentConfig : Window
         if (isExperimentSelected && _selectedRecipe.HasModExtension<ResearchDefModExtension>())
         {
             Widgets.Label(rect5,
-                "Potential Research Projects left to discover: " +
-                leftProjects);
+                $"Potential Research Projects left to discover: {leftProjects}");
         }
 
         // confirm button

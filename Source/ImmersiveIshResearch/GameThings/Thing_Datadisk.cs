@@ -27,7 +27,7 @@ internal class Thing_Datadisk : ThingWithComps
 
         var sBuilder = new StringBuilder();
 
-        sBuilder.Append("Datadisk Contents: " + "\n");
+        sBuilder.Append("Datadisk Contents: \n");
         sBuilder.Append(_uniqueDescription);
         return sBuilder.ToString();
     }

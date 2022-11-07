@@ -61,9 +61,9 @@ public class Thing_FinishedExperiment : ThingWithComps
             return sBuilder.ToString();
         }
 
-        sBuilder.Append("Most Recent Experiment Author" + ": ");
-        sBuilder.Append(comp.pawnExperimentAuthorName + "\n");
-        sBuilder.Append("Research Discovered" + ": ");
+        sBuilder.Append("Most Recent Experiment Author: ");
+        sBuilder.Append($"{comp.pawnExperimentAuthorName}\n");
+        sBuilder.Append("Research Discovered: ");
         sBuilder.Append(comp.researchDefName);
 
 

@@ -130,7 +130,7 @@ public class GameComponent_ImmersiveResearch : GameComponent
                 if (proj.ProgressReal == 0.0f)
                 {
                     Find.LetterStack.ReceiveLetter("Colony Researcher Death - Sole Author",
-                        proj.defName + " had one author. Unfortunately, the project has been lost.",
+                        $"{proj.defName} had one author. Unfortunately, the project has been lost.",
                         LetterDefOf.NegativeEvent);
                     MainResearchDict.MainResearchDict[proj.defName].IsDiscovered = false;
                 }
@@ -231,7 +231,7 @@ public class GameComponent_ImmersiveResearch : GameComponent
 
                 foreach (var s in t.Value)
                 {
-                    var temp = currentExpAuthor + "_" + s;
+                    var temp = $"{currentExpAuthor}_{s}";
                     _colonyExperimentDefNamesForSaving.Add(temp);
                 }
             }

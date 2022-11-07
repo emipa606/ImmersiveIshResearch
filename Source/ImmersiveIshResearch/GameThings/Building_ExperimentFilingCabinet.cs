@@ -27,7 +27,7 @@ public class Building_ExperimentFilingCabinet : Building
     {
         var sBuilder = new StringBuilder();
 
-        sBuilder.Append("Number of stored Experiments" + ": ");
+        sBuilder.Append("Number of stored Experiments: ");
         sBuilder.Append(experimentsInCabinet.Count);
         return sBuilder.ToString();
     }

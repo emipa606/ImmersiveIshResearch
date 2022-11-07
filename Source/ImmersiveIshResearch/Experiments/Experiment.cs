@@ -88,7 +88,7 @@ public class Experiment : Bill_Production
         if (uniquePawnDoer != null)
         {
             var pawnBillDoerRect = new Rect(28f, 20f, rect.width - 48f - 20f, 24f);
-            Widgets.Label(pawnBillDoerRect, "Reserved for: " + uniquePawnDoer.Name);
+            Widgets.Label(pawnBillDoerRect, $"Reserved for: {uniquePawnDoer.Name}");
         }
 
 
@@ -102,7 +102,6 @@ public class Experiment : Bill_Production
         TooltipHandler.TipRegion(rect5, "IR.DeleteBillTip".Translate());
 
         var rect6 = new Rect(300f, 26f, 70f, 24f);
-        //rect6.x -= rect6.width + 4f;
         if (Widgets.ButtonText(rect6, "Suspend"))
         {
             // in RW, setting a bill as suspended will only take effect if you stop the pawn from doing the bill job,
@@ -114,13 +113,6 @@ public class Experiment : Bill_Production
         TooltipHandler.TipRegion(rect6, "IR.SuspendBillTip".Translate());
 
 
-        /* if (!StatusString.NullOrEmpty())
-         {
-             Text.Font = GameFont.Tiny;
-             Rect rect8 = new Rect(24f, rect.height - num, rect.width - 24f, num);
-             Widgets.Label(rect8, StatusString);
-             //DoStatusLineInterface(rect8);
-         }*/
         GUI.EndGroup();
         if (suspended)
         {
@@ -140,30 +132,11 @@ public class Experiment : Bill_Production
 
     public override void Notify_IterationCompleted(Pawn billDoer, List<Thing> ingredients)
     {
-        /*
-        if (billStack.billGiver.LabelShort == "Experiment Bench")
-        {
-            // delete the experiment instance from expStack when Bill is completed
-            Building_ExperimentBench bench = (Building_ExperimentBench)expStack.billGiver;
-            int index = bench.ExpStack.IndexOfBillToExp(billDoer.CurJob.bill);
-            Experiment Exp = (Experiment)bench.ExpStack[index];
-            Log.Error(Exp.Label);
-            bench.ExpStack.Delete(Exp);
-        }
-        if (billStack.billGiver.LabelShort == "Study Table")
-        {
-            // delete the experiment instance from expStack when Bill is completed
-            Building_StudyTable bench = (Building_StudyTable)expStack.billGiver;
-            int index = bench.ExpStack.IndexOfBillToExp(billDoer.CurJob.bill);
-            Experiment Exp = (Experiment)bench.ExpStack[index];
-            Log.Error(Exp.Label);
-            bench.ExpStack.Delete(Exp);
-        }*/
     }
 
     public new string GetUniqueLoadID()
     {
-        return "Experiment_" + recipe.defName + "_" + loadID;
+        return $"Experiment_{recipe.defName}_{loadID}";
     }
 
     public override void ExposeData()
