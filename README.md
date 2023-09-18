@@ -7,7 +7,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 
 - Made Royalty/Ideology as conditional patches
 - Removed some pretty destructive code in favour of a more sensible Postfix style. Should be more compatible with for example the https://steamcommunity.com/sharedfiles/filedetails/?id=735268789]Tech Advancing mod
-- Now supports https://steamcommunity.com/sharedfiles/filedetails/?id=2351393394]ResearchPal - Forked
+- Now supports https://steamcommunity.com/sharedfiles/filedetails/?id=2877856030]ResearchPowl
 
 ![Image](https://i.imgur.com/pufA0kM.png)
 
@@ -116,4 +116,5 @@ This mod makes quite a few changes to the vanilla research portion of the game, 
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2590854684]![Image](https://img.shields.io/github/v/release/emipa606/ImmersiveIshResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
 

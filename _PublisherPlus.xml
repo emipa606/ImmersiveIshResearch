@@ -3,6 +3,8 @@
   <Excluded>
     <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.gitignore</exclude>
     <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.git</exclude>
+    <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.gitmodules</exclude>
+    <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\.gitattributes</exclude>
     <exclude>E:\SteamLibrary\steamapps\common\RimWorld\Mods\ImmersiveIshResearch\Source</exclude>
   </Excluded>
 </Configuration>

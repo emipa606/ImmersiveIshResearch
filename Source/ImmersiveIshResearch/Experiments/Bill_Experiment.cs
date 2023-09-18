@@ -3,7 +3,7 @@ using Verse;
 
 namespace ImmersiveResearch;
 
-public class Bill_Experiment : Experiment, IExposable
+public class Bill_Experiment : Experiment
 {
     public FloatRange hpRange = FloatRange.ZeroToOne;
 

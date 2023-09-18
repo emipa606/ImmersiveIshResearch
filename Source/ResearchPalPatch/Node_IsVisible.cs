@@ -11,13 +11,11 @@ public static class Node_IsVisible
     {
         if (!__result)
         {
-            //Log.Message($"{__instance} should now be shown anyway");
             return;
         }
 
         if (__instance is not ResearchNode node)
         {
-            //Log.Message($"{__instance} is not a research-node");
             return;
         }
 
