@@ -26,9 +26,11 @@ public static class LoreComputerHarmonyPatches
     private static readonly float _rareDatadiskProbability = 50.0f;
     private static readonly float _superRareDatadiskProbability = 5.0f;
 
-    public static List<ResearchProjectDef> FullConcreteResearchList =
-        new List<ResearchProjectDef>(DefDatabase<ResearchProjectDef>
-            .AllDefsListForReading); // a concrete list of all possible research options
+    public static readonly List<ResearchProjectDef> FullConcreteResearchList =
+    [
+        ..DefDatabase<ResearchProjectDef>
+            .AllDefsListForReading.Where(projectDef => projectDef.knowledgeCategory == null)
+    ]; // a concrete list of all possible research options
 
     public static ResearchDict UndiscoveredResearchList;
 
@@ -37,23 +39,25 @@ public static class LoreComputerHarmonyPatches
         var harmony = new Harmony("rimworld.mods.immersiveresearch");
 
         // new game initialisation
-        var NewGameResearchTargetMethod = AccessTools.Method(typeof(GameComponentUtility), "StartedNewGame");
+        var NewGameResearchTargetMethod =
+            AccessTools.Method(typeof(GameComponentUtility), nameof(GameComponentUtility.StartedNewGame));
         var NewGameResearchPatchMethod =
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("NewGameInit"));
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(NewGameInit)));
 
         harmony.Patch(NewGameResearchTargetMethod, null, NewGameResearchPatchMethod);
 
         // load game init
-        var LoadGameResearchTargetMethod = AccessTools.Method(typeof(GameComponentUtility), "LoadedGame");
+        var LoadGameResearchTargetMethod =
+            AccessTools.Method(typeof(GameComponentUtility), nameof(GameComponentUtility.LoadedGame));
         var LoadGameResearchPatchMethod =
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("LoadGameInit"));
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(LoadGameInit)));
 
         harmony.Patch(LoadGameResearchTargetMethod, null, LoadGameResearchPatchMethod);
 
         // Datadisk analyzer float menu
-        var targetMethod = AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders");
+        var targetMethod = AccessTools.Method(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.AddHumanlikeOrders));
         var LorePostfixMethod =
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("AddComputerDropDownMenu"));
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(AddComputerDropDownMenu)));
 
         harmony.Patch(targetMethod, null, LorePostfixMethod);
 
@@ -65,22 +69,22 @@ public static class LoreComputerHarmonyPatches
         //harmony.Patch(researchTargetMethod, researchPrefixMethod);
 
         // patch of bill notify because currently unable to use overriden version on Experiment
-        harmony.Patch(AccessTools.Method(typeof(Bill_Production),
-                "Notify_IterationCompleted"),
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("NotifyExperimentIsCompleted")));
+        harmony.Patch(AccessTools.Method(typeof(Bill_Production), nameof(Bill_Production.Notify_IterationCompleted)),
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(NotifyExperimentIsCompleted))));
 
 
         // update research lists if using debug buttons
-        harmony.Patch(AccessTools.Method(typeof(ResearchManager), "DebugSetAllProjectsFinished"), null,
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("AddResearchToListIfDebugMode")));
+        harmony.Patch(AccessTools.Method(typeof(ResearchManager), nameof(ResearchManager.DebugSetAllProjectsFinished)),
+            null,
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(AddResearchToListIfDebugMode))));
 
         // sends experiment type and size to finishedexperiment when finished production
-        harmony.Patch(AccessTools.Method(typeof(GenRecipe), "MakeRecipeProducts"), null,
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("SetFinishedExpOnMake")));
+        harmony.Patch(AccessTools.Method(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts)), null,
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(SetFinishedExpOnMake))));
 
         // sets a pawn as a colony researcher and adds experiment to list of authored products
-        harmony.Patch(AccessTools.Method(typeof(GenRecipe), "PostProcessProduct"), null,
-            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod("SetThingFromBill")));
+        harmony.Patch(AccessTools.Method(typeof(GenRecipe), nameof(GenRecipe.PostProcessProduct)), null,
+            new HarmonyMethod(typeof(LoreComputerHarmonyPatches).GetMethod(nameof(SetThingFromBill))));
 
         harmony.PatchAll(Assembly.GetExecutingAssembly());
 
@@ -117,7 +121,7 @@ public static class LoreComputerHarmonyPatches
                 }
                 else
                 {
-                    var unused = new List<ResearchTypes> { ResearchTypes.Mod };
+                    _ = new List<ResearchTypes> { ResearchTypes.Mod };
                     UndiscoveredResearchList.MainResearchDict.Add(proj.defName, new ImmersiveResearchProject(proj));
                 }
             }
@@ -130,7 +134,7 @@ public static class LoreComputerHarmonyPatches
                 }
                 else
                 {
-                    var unused = new List<ResearchTypes> { ResearchTypes.Mod };
+                    _ = new List<ResearchTypes> { ResearchTypes.Mod };
                     UndiscoveredResearchList.MainResearchDict.Add(proj.defName, new ImmersiveResearchProject(proj));
                 }
             }
@@ -182,7 +186,7 @@ public static class LoreComputerHarmonyPatches
     public static void LoadGameInit()
     {
         UndiscoveredResearchList = Current.Game.GetComponent<GameComponent_ImmersiveResearch>().MainResearchDict;
-        //loading r Types here until i can figure out a scribing workaround for nested lists
+        //loading r Types here until I can figure out a scribing workaround for nested lists
 
         foreach (var proj in FullConcreteResearchList)
         {
@@ -197,7 +201,7 @@ public static class LoreComputerHarmonyPatches
             {
                 var temp = new List<ResearchTypes> { ResearchTypes.Mod };
                 UndiscoveredResearchList.MainResearchDict[proj.defName].ResearchTypes =
-                    new List<ResearchTypes>(temp);
+                    [..temp];
                 UndiscoveredResearchList.MainResearchDict[proj.defName].ResearchSize = ResearchSizes.Unknown;
             }
         }
@@ -422,6 +426,8 @@ public static class LoreComputerHarmonyPatches
 
     private static string GetModFilePath()
     {
+        return ModLister.GetActiveModWithIdentifier("Mlie.ImmersiveIshResearch").RootDir.FullName;
+
         var localInstalled = false;
         var workshopInstalled = false;
 
@@ -469,13 +475,15 @@ public static class LoreComputerHarmonyPatches
         switch (datadisk.def.defName)
         {
             case "UselessDatadisk":
-                descList = XDocument.Load($"{relativePath}\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
+                descList = XDocument.Load(Path.Combine(relativePath, "DatadiskDescriptions",
+                    "UselessDatadiskDescriptions.xml"));
                 results = descList.Descendants("item").Select(x => (string)x);
                 description = results.ElementAt(Rand.Range(0, results.Count()));
                 break;
 
             case "ValuableDatadisk":
-                descList = XDocument.Load($"{relativePath}\\DatadiskDescriptions\\UselessDatadiskDescriptions.xml");
+                descList = XDocument.Load(Path.Combine(relativePath, "DatadiskDescriptions",
+                    "ValuableDatadiskDescriptions.xml"));
                 results = descList.Descendants("item").Select(x => (string)x);
                 description = results.ElementAt(Rand.Range(0, results.Count()));
                 break;
@@ -636,7 +644,7 @@ public static class LoreComputerHarmonyPatches
     // give the def a name of ??? and desc of some kinda undiscovered lore text
     // CANT BE DONE WITHOUT SIGNIFICANT CHANGES TO RESEARCH WINDOW: WILL PROBS REQUIRE COMPLETE OVERHAUL TO DO
     //private static bool EmptyResearchGraphOfUndiscovered(List<ResearchProjectDef> Rlist)
-    //{
+    //
     //    return true;
     //    for (var index = 0; index < Rlist.Count; ++index)
     //    {
@@ -648,10 +656,10 @@ public static class LoreComputerHarmonyPatches
     //    }
 
     //    return true;
-    //}
+    //
 
     //private static void AddNewResearchToGraph(string researchName)
-    //{
+    //
     //    //var ResearchToAdd = FullConcreteResearchList.Where(item => item.defName == researchName);
     //    //foreach (var proj in ResearchToAdd)
     //    //{
@@ -676,8 +684,8 @@ public static class LoreComputerHarmonyPatches
     {
         var targetParams = new TargetingParameters
         {
-            /* Dont need to use these unless you want to be extra
-             * sure youre clicking what you want to click on
+            /* Don't need to use these unless you want to be extra
+             * sure you're clicking what you want to click on
             canTargetBuildings = true,
             canTargetPawns = false,
             mapObjectTargetsMustBeAutoAttackable = false,*/
@@ -703,7 +711,7 @@ public static class LoreComputerHarmonyPatches
     }
 
     // TODO: VERY HACKY IMPLEMENTATION PLS FIND A WORKAROUND
-    // really dont wanna use a static var to store a requested thing
+    // really don't want to use a static var to store a requested thing
     // find a way to pass params to jobdrivers
     public static Thing TempRequestedExp;
 
@@ -884,7 +892,7 @@ public static class LoreComputerHarmonyPatches
                     }
                 }
 
-                // create the drop down menu button and functionality
+                // create the drop-down menu button and functionality
                 var label = "Load Research Datadisk";
                 var action = (Action)Action4;
                 var priority = MenuOptionPriority.InitiateSocial;

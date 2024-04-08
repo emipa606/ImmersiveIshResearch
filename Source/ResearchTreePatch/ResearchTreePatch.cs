@@ -9,8 +9,7 @@ public class ResearchTreePatch
 {
     static ResearchTreePatch()
     {
-        var harmony = new Harmony("Mlie.ImmersiveIshResearch.ResearchTree");
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
+        new Harmony("Mlie.ImmersiveIshResearch.ResearchTree").PatchAll(Assembly.GetExecutingAssembly());
         Log.Message("[ImmersiveishResearch]: Patched for ResearchTree");
     }
 }

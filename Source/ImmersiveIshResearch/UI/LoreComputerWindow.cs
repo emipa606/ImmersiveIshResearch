@@ -38,10 +38,10 @@ public class LoreComputerWindow : Window
         var rect3 = rect2;
         rect3.yMin += 45f;
 
-        CreateThingListWindow(rect3.ContractedBy(18f));
+        CreateThingListWindow();
     }
 
-    private void CreateThingListWindow(Rect refRect)
+    private void CreateThingListWindow()
     {
         //LoreWindowDrawingUtility.DrawLoreFullList(refRect, ThingList);
     }

@@ -21,7 +21,7 @@ internal class JobDriver_LoadResearchDisk : JobDriver
         return pawn.Reserve(job.GetTarget(TargetIndex.A), job);
     }
 
-    protected override IEnumerable<Toil> MakeNewToils()
+    public override IEnumerable<Toil> MakeNewToils()
     {
         this.FailOnDespawnedNullOrForbidden(LoreCompIndex);
 
@@ -32,7 +32,7 @@ internal class JobDriver_LoadResearchDisk : JobDriver
         yield return Toils_Goto.GotoThing(DataDiskIndex, PathEndMode.Touch);
 
         pawn.CurJob.count =
-            1; // this controls the num of times the pawn will do the toils, e.g count of 50 will make pawn do the entire job 50 times
+            1; // this controls the num of times the pawn will do the toils, e.g. count of 50 will make pawn do the entire job 50 times
         pawn.CurJob.haulMode = HaulMode.ToCellStorage;
 
         yield return Toils_Haul.StartCarryThing(DataDiskIndex);

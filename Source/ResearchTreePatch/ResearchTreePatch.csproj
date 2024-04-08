@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\ResearchTree\1.4\Assemblies</OutputPath>
+    <OutputPath>..\..\ResearchTree\1.5\Assemblies</OutputPath>
     <TargetFramework>net48</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.4.2</FileVersion>
+    <FileVersion>1.5.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>*</Version>
+      <Version>1.5.4055-beta</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -18,16 +18,16 @@
       <Version>*</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+    <Reference Include="ResearchTree">
+      <HintPath>..\..\..\ResearchTree\1.5\Assemblies\FluffyResearchTree.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
+      <ExcludeAssets>all</ExcludeAssets>
+    </Reference>
     <ProjectReference Include="..\ImmersiveIshResearch\ImmersiveIshResearch.csproj">
       <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
       <CopyLocal>False</CopyLocal>
       <Private>false</Private>
     </ProjectReference>
-    <Reference Include="ResearchTree">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\3030499331\1.4\Assemblies\FluffyResearchTree.dll</HintPath>
-      <CopyLocal>False</CopyLocal>
-      <Private>false</Private>
-	  <ExcludeAssets>all</ExcludeAssets>
-    </Reference>
   </ItemGroup>
 </Project>

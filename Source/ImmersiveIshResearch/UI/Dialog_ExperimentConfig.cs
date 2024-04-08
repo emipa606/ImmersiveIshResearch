@@ -8,9 +8,9 @@ namespace ImmersiveResearch;
 
 public class Dialog_ExperimentConfig : Window
 {
-    private readonly List<ExperimentConfigUIElement> _experimentNames = new List<ExperimentConfigUIElement>();
+    private readonly List<ExperimentConfigUIElement> _experimentNames = [];
 
-    private readonly List<ExperimentConfigUIElement> _experimentTypes = new List<ExperimentConfigUIElement>();
+    private readonly List<ExperimentConfigUIElement> _experimentTypes = [];
     private readonly Building_ExperimentBench _selectedTable;
 
     private readonly ImmersiveResearchWindowDrawingUtility ExpList = new ImmersiveResearchWindowDrawingUtility();

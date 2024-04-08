@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ideology</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>/Defs/ResearchProjectDef[defName="Biosculpting"]</xpath>
+          <value>
+            <li Class="ImmersiveResearch.ResearchDefModExtension">
+              <researchTypes>
+                <li>Ultra</li>
+              </researchTypes>
+              <ResearchSize>
+          Medium
+        </ResearchSize>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>/Defs/ResearchProjectDef[defName="Bioregeneration"]</xpath>
+          <value>
+            <li Class="ImmersiveResearch.ResearchDefModExtension">
+              <researchTypes>
+                <li>Ultra</li>
+              </researchTypes>
+              <ResearchSize>
+          Large
+        </ResearchSize>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>/Defs/ResearchProjectDef[defName="NeuralSupercharger"]</xpath>
+          <value>
+            <li Class="ImmersiveResearch.ResearchDefModExtension">
+              <researchTypes>
+                <li>Ultra</li>
+              </researchTypes>
+              <ResearchSize>
+          Large
+        </ResearchSize>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

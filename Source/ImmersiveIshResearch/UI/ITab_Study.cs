@@ -22,7 +22,7 @@ public class ITab_Study : ITab_Bills
 
     protected Building_StudyTable SelectedStudyTable => (Building_StudyTable)SelThing;
 
-    protected override void FillTab()
+    public override void FillTab()
     {
         var windowSize = _winSize;
         var rect1 = new Rect(0f, 0f, windowSize.x, windowSize.y).ContractedBy(10f);

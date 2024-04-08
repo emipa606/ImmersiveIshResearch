@@ -2,6 +2,4 @@
 
 namespace ImmersiveResearch;
 
-internal class ResearchHediffCompProperties : HediffCompProperties
-{
-}
+internal class ResearchHediffCompProperties : HediffCompProperties;

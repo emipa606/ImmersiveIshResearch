@@ -15,8 +15,8 @@ public class Dialog_StudyConfig : Window
     private readonly ImmersiveResearchWindowDrawingUtility _expsInColony =
         new ImmersiveResearchWindowDrawingUtility();
 
-    private readonly List<Tuple<string, Thing>> _finishedExperimentList = new List<Tuple<string, Thing>>();
-    private readonly List<Tuple<string, Thing>> _pawnsInColony = new List<Tuple<string, Thing>>();
+    private readonly List<Tuple<string, Thing>> _finishedExperimentList = [];
+    private readonly List<Tuple<string, Thing>> _pawnsInColony = [];
     private readonly Building_StudyTable _selectedTable;
 
     public Dialog_StudyConfig(Building_StudyTable table)
@@ -59,7 +59,7 @@ public class Dialog_StudyConfig : Window
 
             foreach (var thing in thingList)
             {
-                var unused = thing.TryGetComp<ResearchThingComp>();
+                _ = thing.TryGetComp<ResearchThingComp>();
 
                 _finishedExperimentList.Add(
                     new Tuple<string, Thing>(thing.TryGetComp<ResearchThingComp>().researchDefName, thing));

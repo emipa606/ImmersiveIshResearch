@@ -4,34 +4,20 @@ using Verse;
 
 namespace ImmersiveResearch;
 
-public class ImmersiveResearchDrawEntry
+public class ImmersiveResearchDrawEntry(string label, string basicDesc, Texture2D image = null)
 {
     private Pawn _EntryAttachedPawn;
 
-    public ImmersiveResearchDrawEntry(string label, string basicDescription)
+    public ImmersiveResearchDrawEntry(string label, Thing thing) : this(label, null, null)
     {
-        EntryLabel = label;
-        EntryBasicDesc = basicDescription;
-    }
-
-    public ImmersiveResearchDrawEntry(string label, string basicDesc, Texture2D image)
-    {
-        EntryLabel = label;
-        EntryBasicDesc = basicDesc;
-        EntryImage = image;
-    }
-
-    public ImmersiveResearchDrawEntry(string label, Thing thing)
-    {
-        EntryLabel = label;
         EntryAttachedThing = thing;
     }
 
-    public string EntryLabel { get; }
+    public string EntryLabel { get; } = label;
 
-    public string EntryBasicDesc { get; }
+    public string EntryBasicDesc { get; } = basicDesc;
 
-    public Texture2D EntryImage { get; }
+    public Texture2D EntryImage { get; } = image;
 
     public Thing EntryAttachedThing { get; }
 

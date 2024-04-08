@@ -22,7 +22,7 @@ public class ITab_Experiments : ITab_Bills
 
     protected Building_ExperimentBench SelectedExperimentTable => (Building_ExperimentBench)SelThing;
 
-    protected override void FillTab()
+    public override void FillTab()
     {
         var windowSize = _winSize;
         var rect1 = new Rect(0f, 0f, windowSize.x, windowSize.y).ContractedBy(10f);

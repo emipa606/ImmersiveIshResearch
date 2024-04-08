@@ -10,10 +10,10 @@ public class ResearchDict : IExposable
     private static Dictionary<string, ImmersiveResearchProject> UndiscoveredResearchList =
         new Dictionary<string, ImmersiveResearchProject>();
 
-    private List<bool> ResearchDictBools = new List<bool>();
+    private List<bool> ResearchDictBools = [];
 
-    private List<string> ResearchDictKeys = new List<string>();
-    private List<float> ResearchDictWeightings = new List<float>();
+    private List<string> ResearchDictKeys = [];
+    private List<float> ResearchDictWeightings = [];
 
     //TODO: figure out better way to scribe nested lists if possible
     private Dictionary<int, ResearchTypes> researchTypesLocal = new Dictionary<int, ResearchTypes>();

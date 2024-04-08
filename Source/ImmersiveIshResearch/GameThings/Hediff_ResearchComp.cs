@@ -4,7 +4,7 @@ namespace ImmersiveResearch;
 
 internal class Hediff_ResearchComp : HediffWithComps
 {
-    public override void Notify_PawnDied()
+    public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
     {
         var temp = Current.Game.GetComponent<GameComponent_ImmersiveResearch>();
         if (temp.CheckResearcherHasPublishedExperiments(pawn.Name.ToString()))
@@ -17,6 +17,6 @@ internal class Hediff_ResearchComp : HediffWithComps
             Log.Error("pawn has no attached research defNames.");
         }
 
-        base.Notify_PawnDied();
+        base.Notify_PawnDied(dinfo, culprit);
     }
 }

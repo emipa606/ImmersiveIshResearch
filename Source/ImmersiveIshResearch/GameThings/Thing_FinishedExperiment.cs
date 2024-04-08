@@ -8,9 +8,9 @@ namespace ImmersiveResearch;
 
 public class Thing_FinishedExperiment : ThingWithComps
 {
-    private readonly List<ResearchProjectDef> _researchProjsForSelection = new List<ResearchProjectDef>();
+    private readonly List<ResearchProjectDef> _researchProjsForSelection = [];
     private ResearchSizes _thingResearchSize = 0;
-    private List<ResearchTypes> _thingResearchTypes = new List<ResearchTypes>();
+    private List<ResearchTypes> _thingResearchTypes = [];
 
     public List<ResearchTypes> ThingResearchTypes
     {
@@ -26,7 +26,7 @@ public class Thing_FinishedExperiment : ThingWithComps
 
     public override void PostMake()
     {
-        //TODO: move this from post make so a NEW research proj isnt discovered every time an new instance of this appears in the game world
+        //TODO: move this from post make so a NEW research proj isn't discovered every time a new instance of this appears in the game world
         _thingResearchTypes = def.GetModExtension<ResearchDefModExtension>().researchTypes;
         _thingResearchSize = def.GetModExtension<ResearchDefModExtension>().ResearchSize;
 
@@ -118,13 +118,13 @@ public class Thing_FinishedExperiment : ThingWithComps
                         continue;
                     }
 
-                    if (!TempDict.ContainsKey(ProjDef.defName))
+                    if (!TempDict.TryGetValue(ProjDef.defName, out var value))
                     {
                         //Log.Error("cant find key: " + ProjDef.defName);
                         continue;
                     }
 
-                    if (TempDict[ProjDef.defName].IsDiscovered)
+                    if (value.IsDiscovered)
                     {
                         //Log.Error("is discovered: " + ProjDef.defName);
                         continue;

@@ -3,7 +3,7 @@ using Verse;
 
 namespace ImmersiveResearch;
 
-public class Bill_Experiment : Experiment
+public class Bill_Experiment(RecipeDef recipe) : Experiment(recipe)
 {
     public FloatRange hpRange = FloatRange.ZeroToOne;
 
@@ -17,9 +17,4 @@ public class Bill_Experiment : Experiment
     private BillStoreModeDef storeMode = BillStoreModeDefOf.BestStockpile;
 
     private Zone_Stockpile storeZone;
-
-    public Bill_Experiment(RecipeDef recipe)
-        : base(recipe)
-    {
-    }
 }

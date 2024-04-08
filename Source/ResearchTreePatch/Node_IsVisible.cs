@@ -4,7 +4,7 @@ using ImmersiveResearch;
 
 namespace ImmersiveIshResearch;
 
-[HarmonyPatch(typeof(Node), "IsVisible")]
+[HarmonyPatch(typeof(Node), nameof(Node.IsVisible))]
 public static class Node_IsVisible
 {
     public static void Postfix(Node __instance, ref bool __result)

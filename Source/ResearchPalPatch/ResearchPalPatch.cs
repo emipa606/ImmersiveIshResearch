@@ -9,8 +9,7 @@ public class ResearchPalPatch
 {
     static ResearchPalPatch()
     {
-        var harmony = new Harmony("Mlie.ImmersiveIshResearch.ResearchPal");
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
+        new Harmony("Mlie.ImmersiveIshResearch.ResearchPal").PatchAll(Assembly.GetExecutingAssembly());
         Log.Message("[ImmersiveishResearch]: Patched for ResearchPal");
     }
 }

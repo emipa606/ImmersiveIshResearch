@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- ITab titles -->
+  <IR.TabExperiments>Expmnts</IR.TabExperiments>
+  <!-- Bills tab  -->
+  <IR.AddBill>Add Experiment</IR.AddBill>
+  <IR.RecipeRequiresSkills>The recipe {0} requires the skills below. None of your colonists have these skills, so nobody will do this bill.</IR.RecipeRequiresSkills>
+  <IR.MinimumSkill>Min skill</IR.MinimumSkill>
+  <IR.SuspendedCaps>SUSPENDED</IR.SuspendedCaps>
+  <IR.BoundWorkerIs>Worker: {1_labelShort}</IR.BoundWorkerIs>
+  <IR.PlantVerb>Plant</IR.PlantVerb>
+  <IR.ClipboardBillNotAvailableHere>Copied bill cannot be pasted here.</IR.ClipboardBillNotAvailableHere>
+  <IR.ReorderBillUpTip>Move up</IR.ReorderBillUpTip>
+  <IR.ReorderBillDownTip>Move down</IR.ReorderBillDownTip>
+  <IR.DeleteBillTip>Delete</IR.DeleteBillTip>
+  <IR.CopyBillTip>Copy to the clipboard</IR.CopyBillTip>
+  <IR.SuspendBillTip>Suspend</IR.SuspendBillTip>
+  <IR.PasteBillTip>Paste</IR.PasteBillTip>
+  <IR.PasteBillTip_LimitReached>can't add more</IR.PasteBillTip_LimitReached>
+</LanguageData>

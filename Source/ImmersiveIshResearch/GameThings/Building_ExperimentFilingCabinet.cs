@@ -16,7 +16,7 @@ public class Building_ExperimentFilingCabinet : Building
 
     public Building_ExperimentFilingCabinet()
     {
-        researchDefsInCabinet = new List<string>();
+        researchDefsInCabinet = [];
         experimentsInCabinet = new Dictionary<string, Thing>();
     }
 

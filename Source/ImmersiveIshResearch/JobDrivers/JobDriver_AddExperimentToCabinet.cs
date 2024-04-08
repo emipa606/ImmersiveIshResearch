@@ -19,7 +19,7 @@ public class JobDriver_AddExperimentToCabinet : JobDriver
         return pawn.Reserve(job.GetTarget(TargetIndex.A), job);
     }
 
-    protected override IEnumerable<Toil> MakeNewToils()
+    public override IEnumerable<Toil> MakeNewToils()
     {
         this.FailOnDespawnedNullOrForbidden(CabinetIndex);
 
@@ -36,7 +36,7 @@ public class JobDriver_AddExperimentToCabinet : JobDriver
 
         if (thingList.Count > 0)
         {
-            // this appears to be only way to enqueue new custom jobs without using work/jobgiver
+            // this appears to be an only way to enqueue new custom jobs without using work/jobgiver
             foreach (var thing in thingList)
             {
                 if (thing == curExp)

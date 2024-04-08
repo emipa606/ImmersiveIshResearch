@@ -105,7 +105,7 @@ public class Experiment : Bill_Production
         if (Widgets.ButtonText(rect6, "Suspend"))
         {
             // in RW, setting a bill as suspended will only take effect if you stop the pawn from doing the bill job,
-            // for example, if a pawn is doing a bill and you suspend it, it will keep doing the bill until you manually stop them or they stop themselves.
+            // for example, if a pawn is doing a bill, and you suspend it, it will keep doing the bill until you manually stop them, or they stop themselves.
             suspended = !suspended;
             expStack.SetSuspended(this, suspended);
         }

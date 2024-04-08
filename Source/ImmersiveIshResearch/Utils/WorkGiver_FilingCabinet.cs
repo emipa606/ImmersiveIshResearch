@@ -14,7 +14,7 @@ public class WorkGiver_FilingCabinet : WorkGiver_Scanner
             return null;
         }
 
-        var unused = JobMaker.MakeJob(TakeExperimentJobDefOf.CabinetTakeExperiment);
+        _ = JobMaker.MakeJob(TakeExperimentJobDefOf.CabinetTakeExperiment);
         return null;
     }
 }

@@ -7,7 +7,7 @@ namespace ImmersiveResearch;
 
 public class ExperimentStack : BillStack
 {
-    private List<Experiment> _experiments = new List<Experiment>();
+    private List<Experiment> _experiments = [];
 
     public ExperimentStack(IBillGiver giver) : base(giver)
     {

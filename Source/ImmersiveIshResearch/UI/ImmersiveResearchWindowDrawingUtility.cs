@@ -12,8 +12,8 @@ namespace ImmersiveResearch;
 /// </summary>
 public class ImmersiveResearchWindowDrawingUtility
 {
-    private readonly List<ImmersiveResearchDrawEntry> _cachedDrawEntries = new List<ImmersiveResearchDrawEntry>();
-    private readonly List<Rect> testRectList = new List<Rect>();
+    private readonly List<ImmersiveResearchDrawEntry> _cachedDrawEntries = [];
+    private readonly List<Rect> testRectList = [];
     private float _listHeight;
     private ImmersiveResearchDrawEntry _mousedOverEntry;
 

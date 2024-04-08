@@ -2,16 +2,9 @@
 
 namespace ImmersiveResearch;
 
-public struct ExperimentConfigUIElement
+public struct ExperimentConfigUIElement(Texture2D icon, string def, string text)
 {
-    public Texture2D UIIcon { get; }
-    public string PartialDefName { get; }
-    public string UIText { get; }
-
-    public ExperimentConfigUIElement(Texture2D icon, string def, string text)
-    {
-        UIIcon = icon;
-        PartialDefName = def;
-        UIText = text;
-    }
+    public Texture2D UIIcon { get; } = icon;
+    public string PartialDefName { get; } = def;
+    public string UIText { get; } = text;
 }

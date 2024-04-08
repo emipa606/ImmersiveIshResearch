@@ -8,8 +8,8 @@ namespace ImmersiveResearch;
 
 public class GameComponent_ImmersiveResearch : GameComponent
 {
-    private HashSet<string> _colonyExperimentAuthorsForSaving = new HashSet<string>();
-    private HashSet<string> _colonyExperimentDefNamesForSaving = new HashSet<string>();
+    private HashSet<string> _colonyExperimentAuthorsForSaving = [];
+    private HashSet<string> _colonyExperimentDefNamesForSaving = [];
 
 
     public GameComponent_ImmersiveResearch(Game game)
@@ -261,7 +261,7 @@ public class GameComponent_ImmersiveResearch : GameComponent
 
         foreach (var t in _colonyExperimentAuthorsForSaving)
         {
-            // TODO: change this so it doesnt use chars that could be used in a pawn name
+            // TODO: change this, so it doesn't use chars that could be used in a pawn name
             //       Or to something else entirely
             var tempList = new List<string>();
             ColonyResearcherExperimentDict.Add(t, tempList);

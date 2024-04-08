@@ -5,7 +5,8 @@ using Verse;
 
 namespace ImmersiveResearch;
 
-[HarmonyPatch(typeof(MainTabWindow_Research), "VisibleResearchProjects", MethodType.Getter)]
+[HarmonyPatch(typeof(MainTabWindow_Research), nameof(MainTabWindow_Research.VisibleResearchProjects),
+    MethodType.Getter)]
 public static class MainTabWindow_Research_VisibleResearchProjects
 {
     public static void Postfix(ref List<ResearchProjectDef> __result)
@@ -13,7 +14,8 @@ public static class MainTabWindow_Research_VisibleResearchProjects
         for (var index = 0; index < __result.Count; ++index)
         {
             var project = __result[index].defName;
-            if (LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[project]?.IsDiscovered == true)
+            if (!LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict.ContainsKey(project) ||
+                LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[project]?.IsDiscovered == true)
             {
                 continue;
             }

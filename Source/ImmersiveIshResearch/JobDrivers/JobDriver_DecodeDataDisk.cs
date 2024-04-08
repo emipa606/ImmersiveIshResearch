@@ -25,7 +25,7 @@ internal class JobDriver_DecodeDataDisk : JobDriver
         return pawn.Reserve(job.GetTarget(TargetIndex.A), job);
     }
 
-    protected override IEnumerable<Toil> MakeNewToils()
+    public override IEnumerable<Toil> MakeNewToils()
     {
         this.FailOnDespawnedNullOrForbidden(LoreCompIndex);
 

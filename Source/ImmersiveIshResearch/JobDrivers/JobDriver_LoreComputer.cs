@@ -20,7 +20,7 @@ internal class JobDriver_LoreComputer : JobDriver
         return pawn.Reserve(_loreComp, job);
     }
 
-    protected override IEnumerable<Toil> MakeNewToils()
+    public override IEnumerable<Toil> MakeNewToils()
     {
         // move whatever is attempting this job to the target (lore computer)
         this.FailOnDespawnedOrNull(TargetIndex.A);
@@ -30,7 +30,7 @@ internal class JobDriver_LoreComputer : JobDriver
         var accessDatabase = new Toil();
         accessDatabase.initAction = delegate
         {
-            var unused = accessDatabase.actor;
+            _ = accessDatabase.actor;
             if (!_loreComp.IsBrokenDown())
             {
                 // Log.Error("Attempting to create lore window from job driver", false);

@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\1.4\Assemblies</OutputPath>
+    <OutputPath>..\..\ResearchPal\1.4\Assemblies</OutputPath>
     <TargetFramework>net48</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.4.1</FileVersion>
+    <FileVersion>1.4.2</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
@@ -18,17 +18,15 @@
       <Version>*</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-	  <Reference Include="ResearchPal">
-		  <HintPath>..\..\..\..\..\..\workshop\content\294100\2351393394\1.4\Assemblies\ResearchTree.dll</HintPath>
-		  <CopyLocal>False</CopyLocal>
-		  <Private>false</Private>
-	  </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ImmersiveIshResearch\ImmersiveIshResearch.csproj">
-    <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
-    <CopyLocal>False</CopyLocal>
-    <Private>false</Private>
-	</ProjectReference>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
+    </ProjectReference>
+    <Reference Include="ResearchPowl">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2877856030\1.4\Assemblies\ResearchPowl.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 </Project>
