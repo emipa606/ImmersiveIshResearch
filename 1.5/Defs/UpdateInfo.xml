@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TabulaRasa.UpdateDef Abstract="true" Name="ImmersiveIshResearch_UpdateInfoBase">
+		<linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2590854684</linkUrl>
+		<banner>UpdateInfo/ImmersiveIshResearch</banner>
+	</TabulaRasa.UpdateDef>
+	<TabulaRasa.UpdateDef ParentName="ImmersiveIshResearch_UpdateInfoBase" MayRequire="neronix17.toolbox">
+		<defName>ImmersiveIshResearch_1_5_0</defName>
+		<date>2026/1/4</date>
+		<content>This mod will not be further updated.</content>
+	</TabulaRasa.UpdateDef>
+</Defs>
+

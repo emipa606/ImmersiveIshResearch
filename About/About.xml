@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Immersive-ish Research (Continued)</name>
+  <name>[Abandoned] Immersive-ish Research (Continued)</name>
   <packageId>Mlie.ImmersiveIshResearch</packageId>
   <author>hubba368</author>
   <url>https://github.com/emipa606/ImmersiveIshResearch</url>
@@ -22,7 +22,7 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+  <description>[img]https://img.litet.net/logos/Info.png[/img]
 Update of hubba368s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 
@@ -31,20 +31,20 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 - Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2877856030]ResearchPowl[/url]
 - Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3030499331]Research Tree[/url]
 
-[img]https://i.imgur.com/pufA0kM.png[/img]
+[img]https://img.litet.net/logos/Abandoned.png[/img]
 
 [table]
     [tr]
-        [td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
-        [td][url=https://github.com/emipa606/ImmersiveIshResearch][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+        [td][url=https://discord.gg/h5TY6DA][img]https://img.litet.net/logos/Discord.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/ImmersiveIshResearch][img]https://img.litet.net/logos/Github.png[/img][/url][/td]
     [/tr]
     [tr]
-        [td][img]https://i.imgur.com/XLUGyo4.png[/img][/td]
-        [td][img]https://i.imgur.com/6KqTKks.png[/img][/td]
+        [td][img]https://img.litet.net/logos/UnsafeToAdd.png[/img][/td]
+        [td][img]https://img.litet.net/logos/UnsafeToRemove.png[/img][/td]
     [/tr]
 [/table]
 	
-[img]https://i.imgur.com/Z4GOv8H.png[/img]
+[img]https://img.litet.net/logos/OriginalDescription.png[/img]
 If you've ever wondered how it's possible your [strike]tunnel-dwelling illiterates[/strike] totally regular colonists are able to know how and what to research, then this is probably the mod for you.
 
 This mod makes quite a few changes to the vanilla research portion of the game, and how research is progressed throughout the game.
@@ -116,17 +116,17 @@ This mod makes quite a few changes to the vanilla research portion of the game, 
 [*]fix mod incompatibilities
 [/list]
 
-[img]https://i.imgur.com/PwoNOj4.png[/img]
+[img]https://img.litet.net/logos/ReportingIssues.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] Always post your log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url]
 [*] For best support, please use the Discord-channel for error-reporting.
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
-[/list]
+[/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2590854684][img]https://img.shields.io/github/v/release/emipa606/ImmersiveIshResearch?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url]</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.0</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
 </ModMetaData>

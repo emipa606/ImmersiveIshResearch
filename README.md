@@ -1,21 +1,20 @@
-# ImmersiveIshResearch
+# [[Abandoned] Immersive-ish Research (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2590854684)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of hubba368s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1732571153
 
 - Made Royalty/Ideology as conditional patches
-- Removed some pretty destructive code in favour of a more sensible Postfix style. Should be more compatible with for example the https://steamcommunity.com/sharedfiles/filedetails/?id=735268789]Tech Advancing mod
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2877856030]ResearchPowl
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=3030499331]Research Tree
+- Removed some pretty destructive code in favour of a more sensible Postfix style. Should be more compatible with for example the [Tech Advancing](https://steamcommunity.com/sharedfiles/filedetails/?id=735268789) mod
+- Added support for [ResearchPowl](https://steamcommunity.com/sharedfiles/filedetails/?id=2877856030)
+- Added support for [Research Tree](https://steamcommunity.com/sharedfiles/filedetails/?id=3030499331)
 
-![Image](https://i.imgur.com/pufA0kM.png)
-
+![Image](https://img.litet.net/logos/Abandoned.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
-If you've ever wondered how it's possible your [strike]tunnel-dwelling illiterates[/strike] totally regular colonists are able to know how and what to research, then this is probably the mod for you.
+If you've ever wondered how it's possible your ~~tunnel-dwelling illiterates~~ totally regular colonists are able to know how and what to research, then this is probably the mod for you.
 
 This mod makes quite a few changes to the vanilla research portion of the game, and how research is progressed throughout the game.
 
@@ -104,19 +103,18 @@ This mod makes quite a few changes to the vanilla research portion of the game, 
 
 
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2590854684]![Image](https://img.shields.io/github/v/release/emipa606/ImmersiveIshResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/ImmersiveIshResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2590854684)

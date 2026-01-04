@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="ImmersiveIshResearch/ImmersiveIshResearch.csproj" />
+  <Project Path="ResearchPalPatch/ResearchPalPatch.csproj" />
+  <Project Path="ResearchTreePatch/ResearchTreePatch.csproj" />
+</Solution>
